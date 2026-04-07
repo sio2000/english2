@@ -12,11 +12,10 @@ export default function Videos() {
             Βίντεο & στιγμιότυπα
           </h2>
           <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed mb-6">
-            Μικρά reels από την{' '}
-            <span className="text-gray-900 font-medium">Pouma Academy</span>—ιδέες για Αγγλικά,
-            αυτοπεποίθηση και επικοινωνία. Η προβολή γίνεται{' '}
-            <span className="text-emerald-700">απευθείας εδώ</span>: πάτα play και δες το βίντεο μέσα
-            στη σελίδα, χωρίς να ανοίγει νέο παράθυρο.
+            Κάθε βίντεο, μια μικρή δόση{' '}
+            <span className="text-emerald-700 font-medium">έμπνευσης</span>. Πάτα play και ανακάλυψε
+            tips, ιδέες και μυστικά επικοινωνίας από την{' '}
+            <span className="text-gray-900 font-medium">Pouma Academy</span> — σε λιγότερο από ένα λεπτό.
           </p>
           <div className="w-20 h-1 bg-emerald-600 mx-auto" />
         </div>
