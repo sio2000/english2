@@ -1,3 +1,5 @@
+import profileImage from '../assets/profile.png';
+
 export default function About() {
   return (
     <section id="about" className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-50 to-white">
@@ -6,8 +8,8 @@ export default function About() {
           <div className="order-2 lg:order-1">
             <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
               <img
-                src="https://images.pexels.com/photos/3184416/pexels-photo-3184416.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                alt="Elena - English Communication & Life Coach"
+                src={profileImage}
+                alt="Pouma Academy — Communication & Life"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -15,14 +17,17 @@ export default function About() {
 
           <div className="order-1 lg:order-2 space-y-6">
             <div>
-              <h2 className="text-4xl sm:text-5xl font-light text-gray-900 mb-6">
-                Γεια σου, είμαι η Elena
+              <h2 className="text-4xl sm:text-5xl font-light text-gray-900 mb-2">
+                Pouma Academy
               </h2>
+              <p className="text-lg sm:text-xl text-emerald-700 font-medium tracking-wide mb-6">
+                Communication &amp; Life
+              </p>
               <div className="w-20 h-1 bg-emerald-600 mb-8" />
             </div>
 
             <p className="text-lg text-gray-700 leading-relaxed">
-              Για χρόνια παρατηρούσα ανθρώπους με εκπληκτικές ιδέες να μένουν σιωπηλοί, όχι επειδή δεν ήξεραν Αγγλικά, αλλά επειδή φοβόντουσαν να εκφραστούν.
+              Γεια σου! Για χρόνια παρατηρούσα ανθρώπους με εκπληκτικές ιδέες να μένουν σιωπηλοί, όχι επειδή δεν ήξεραν Αγγλικά, αλλά επειδή φοβόντουσαν να εκφραστούν.
             </p>
 
             <p className="text-lg text-gray-700 leading-relaxed">

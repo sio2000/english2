@@ -1,3 +1,50 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  .video-embed-shell {
+    overflow: hidden;
+  }
+
+  /*
+   * Το embed του Instagram φορτώνει ολόκληρο το post (λεζάντα, σχόλια).
+   * Δεν μπορούμε να αλλάξουμε το εσωτερικό του iframe· κόβουμε μόνο οπτικά
+   * το κάτω μέρος με overflow + μετατόπιση ώστε να φαίνεται κυρίως το βίντεο.
+   */
+  .instagram-video-crop {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    max-height: min(72vh, 620px);
+    overflow: hidden;
+    border-radius: 0.75rem;
+    background: #000;
+  }
+
+  .instagram-video-crop__iframe {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    z-index: 0;
+    width: 100%;
+    min-width: 326px;
+    /* Μεγάλο ύψος ώστε να φορτώνει όλο το post· το πλαίσιο κόβει κάτω μέρος */
+    height: 920px;
+    border: 0 !important;
+    transform: translateX(-50%) translateY(-3.25rem);
+    transform-origin: top center;
+  }
+
+  /* Μασκάρει το CTA «Watch on Instagram» στο κάτω μέρος του embed (μέσα στο iframe δεν αλλάζει). */
+  .instagram-embed-cta-mask {
+    height: 4.5rem;
+    background: linear-gradient(
+      to top,
+      #000 0%,
+      rgba(0, 0, 0, 0.88) 35%,
+      rgba(0, 0, 0, 0.35) 70%,
+      transparent 100%
+    );
+  }
+}

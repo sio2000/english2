@@ -2,6 +2,7 @@ import Navigation from './components/Navigation';
 import Hero from './components/Hero';
 import Services from './components/Services';
 import About from './components/About';
+import Videos from './components/Videos';
 import Transformation from './components/Transformation';
 import WhyChooseMe from './components/WhyChooseMe';
 import Testimonials from './components/Testimonials';
@@ -17,6 +18,7 @@ function App() {
       <Services />
       <Transformation />
       <About />
+      <Videos />
       <WhyChooseMe />
       <Testimonials />
       <CTA />

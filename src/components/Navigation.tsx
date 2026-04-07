@@ -16,9 +16,12 @@ export default function Navigation() {
         <div className="flex justify-between items-center h-20">
           <button
             onClick={() => scrollToSection('hero')}
-            className="text-2xl font-light tracking-tight text-gray-900"
+            className="text-left text-2xl font-light tracking-tight text-gray-900"
           >
-            Elena Coaching
+            <span className="block">Pouma Academy</span>
+            <span className="block text-xs sm:text-sm font-normal text-emerald-600 tracking-normal mt-0.5">
+              Communication &amp; Life
+            </span>
           </button>
 
           <div className="hidden md:flex items-center space-x-8">
@@ -33,6 +36,12 @@ export default function Navigation() {
               className="text-gray-600 hover:text-gray-900 transition-colors"
             >
               Σχετικά
+            </button>
+            <button
+              onClick={() => scrollToSection('videos')}
+              className="text-gray-600 hover:text-gray-900 transition-colors"
+            >
+              Βίντεο
             </button>
             <button
               onClick={() => scrollToSection('testimonials')}
@@ -71,6 +80,12 @@ export default function Navigation() {
               className="block w-full text-left text-gray-600 hover:text-gray-900"
             >
               Σχετικά
+            </button>
+            <button
+              onClick={() => scrollToSection('videos')}
+              className="block w-full text-left text-gray-600 hover:text-gray-900"
+            >
+              Βίντεο
             </button>
             <button
               onClick={() => scrollToSection('testimonials')}
