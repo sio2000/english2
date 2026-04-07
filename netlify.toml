@@ -5,6 +5,9 @@
 [build.environment]
   NODE_VERSION = "18"
 
+[build.processing]
+  skip_processing = true
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
