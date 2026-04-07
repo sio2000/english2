@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  body {
+    font-family: 'Barlow', sans-serif;
+  }
+}
+
 @layer utilities {
   .video-embed-shell {
     overflow: hidden;

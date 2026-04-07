@@ -2,7 +2,12 @@
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        barlow: ['Barlow', 'sans-serif'],
+        instrument: ['Instrument Serif', 'serif'],
+      },
+    },
   },
   plugins: [],
 };

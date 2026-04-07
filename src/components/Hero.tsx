@@ -1,4 +1,7 @@
-import { ArrowRight } from 'lucide-react';
+import { Play } from 'lucide-react';
+
+const VIDEO_URL =
+  'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260228_065522_522e2295-ba22-457e-8fdb-fbcd68109c73.mp4';
 
 export default function Hero() {
   const scrollToSection = (id: string) => {
@@ -7,56 +10,44 @@ export default function Hero() {
   };
 
   return (
-    <section id="hero" className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-50 to-white">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-8">
-            <div className="space-y-4">
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-light leading-tight text-gray-900">
-                Μίλα Αγγλικά με{' '}
-                <span className="font-normal text-emerald-600">Αυτοπεποίθηση</span>
-              </h1>
-              <p className="text-xl sm:text-2xl text-gray-600 font-light leading-relaxed">
-                Δείξε τον Εαυτό σου όπως πραγματικά είναι
-              </p>
-            </div>
+    <section
+      id="hero"
+      className="relative min-h-[90vh] flex items-center justify-center overflow-hidden"
+    >
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover"
+      >
+        <source src={VIDEO_URL} type="video/mp4" />
+      </video>
 
-            <p className="text-lg text-gray-600 leading-relaxed max-w-xl">
-              Ξεπέρασε τον φόβο της έκφρασης, απελευθέρωσε την φωνή σου και ανακάλυψε την αληθινή σου δύναμη μέσα από καθαρή επικοινωνία και προσωπική μεταμόρφωση.
-            </p>
+      <div className="relative z-10 flex flex-col items-center text-center px-4 pt-28 pb-20">
+        <h1 className="flex flex-col items-center gap-1">
+          <span className="font-barlow font-semibold text-white text-[clamp(32px,5.5vw,72px)] leading-[1.05] tracking-[-4px]">
+            Μίλα Αγγλικά με
+          </span>
+          <span className="font-instrument italic text-white text-[clamp(42px,6.5vw,84px)] leading-[1.1]">
+            Αυτοπεποίθηση
+          </span>
+        </h1>
 
-            <div className="flex flex-col sm:flex-row gap-4">
-              <button
-                onClick={() => scrollToSection('contact')}
-                className="bg-emerald-600 text-white px-8 py-4 rounded-lg hover:bg-emerald-700 transition-all hover:scale-105 flex items-center justify-center gap-2 text-lg"
-              >
-                Ξεκίνα Τώρα
-                <ArrowRight size={20} />
-              </button>
-              <button
-                onClick={() => scrollToSection('services')}
-                className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-lg hover:border-emerald-600 hover:text-emerald-600 transition-all text-lg"
-              >
-                Δες τις Υπηρεσίες
-              </button>
-            </div>
-          </div>
+        <p className="font-barlow font-medium text-white/80 text-[18px] mt-6 max-w-lg">
+          Δείξε τον Εαυτό σου όπως πραγματικά είναι — ξεπέρασε τον φόβο
+          της έκφρασης και ανακάλυψε την αληθινή σου δύναμη
+        </p>
 
-          <div className="relative">
-            <div className="aspect-square rounded-2xl overflow-hidden shadow-2xl">
-              <img
-                src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                alt="Confident communication"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-xl max-w-xs">
-              <p className="text-sm text-gray-600 italic">
-                "Η αληθινή επικοινωνία ξεκινά όταν βρεις την φωνή σου"
-              </p>
-            </div>
-          </div>
-        </div>
+        <button
+          onClick={() => scrollToSection('videos')}
+          className="mt-10 flex items-center gap-3 bg-white text-gray-900 pl-5 pr-7 py-3.5 rounded-full font-barlow font-medium text-[16px] hover:bg-white/90 transition-colors shadow-lg"
+        >
+          <span className="w-9 h-9 rounded-full bg-gray-900 flex items-center justify-center">
+            <Play size={16} className="text-white ml-0.5" fill="white" />
+          </span>
+          Δες τα Βίντεο
+        </button>
       </div>
     </section>
   );

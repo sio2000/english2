@@ -1,6 +1,13 @@
 import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
 
+const NAV_LINKS = [
+  { label: 'Υπηρεσίες', target: 'services' },
+  { label: 'Σχετικά', target: 'about' },
+  { label: 'Βίντεο', target: 'videos' },
+  { label: 'Μαρτυρίες', target: 'testimonials' },
+];
+
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -11,97 +18,104 @@ export default function Navigation() {
   };
 
   return (
-    <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+    <nav className="fixed top-4 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] max-w-6xl z-50">
+      <div className="bg-white rounded-[16px] shadow-[0_4px_30px_rgba(0,0,0,0.08)] px-6 py-3">
+        <div className="flex items-center justify-between">
           <button
             onClick={() => scrollToSection('hero')}
-            className="text-left text-2xl font-light tracking-tight text-gray-900"
+            className="text-left"
           >
-            <span className="block">Pouma Academy</span>
-            <span className="block text-xs sm:text-sm font-normal text-emerald-600 tracking-normal mt-0.5">
+            <span className="block font-barlow text-xl font-bold tracking-tight text-gray-900">
+              Pouma Academy
+            </span>
+            <span className="block font-barlow text-[11px] font-medium text-emerald-600 tracking-wide">
               Communication &amp; Life
             </span>
           </button>
 
-          <div className="hidden md:flex items-center space-x-8">
-            <button
-              onClick={() => scrollToSection('services')}
-              className="text-gray-600 hover:text-gray-900 transition-colors"
-            >
-              Υπηρεσίες
-            </button>
-            <button
-              onClick={() => scrollToSection('about')}
-              className="text-gray-600 hover:text-gray-900 transition-colors"
-            >
-              Σχετικά
-            </button>
-            <button
-              onClick={() => scrollToSection('videos')}
-              className="text-gray-600 hover:text-gray-900 transition-colors"
-            >
-              Βίντεο
-            </button>
-            <button
-              onClick={() => scrollToSection('testimonials')}
-              className="text-gray-600 hover:text-gray-900 transition-colors"
-            >
-              Μαρτυρίες
-            </button>
+          <div className="hidden md:flex items-center gap-8">
+            {NAV_LINKS.map((link) => (
+              <button
+                key={link.target}
+                onClick={() => scrollToSection(link.target)}
+                className="font-barlow font-medium text-[14px] text-gray-600 hover:text-gray-900 transition-colors"
+              >
+                {link.label}
+              </button>
+            ))}
+          </div>
+
+          <div className="hidden md:flex items-center">
             <button
               onClick={() => scrollToSection('contact')}
-              className="bg-emerald-600 text-white px-6 py-2.5 rounded-lg hover:bg-emerald-700 transition-colors"
+              className="flex items-center gap-2.5 bg-[#222] text-white pl-5 pr-3 py-2 rounded-full font-barlow font-medium text-[14px] hover:bg-black transition-colors"
             >
-              Επικοινωνία
+              Κλείσε Συνεδρία
+              <span className="w-7 h-7 rounded-full bg-white/15 flex items-center justify-center">
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 12 12"
+                  fill="none"
+                  className="rotate-[-45deg]"
+                >
+                  <path
+                    d="M1 11L11 1M11 1H3M11 1V9"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </span>
             </button>
           </div>
 
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-gray-600"
+            className="md:hidden text-gray-700"
           >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+            {isOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
-      </div>
 
-      {isOpen && (
-        <div className="md:hidden bg-white border-b border-gray-100">
-          <div className="px-4 py-6 space-y-4">
-            <button
-              onClick={() => scrollToSection('services')}
-              className="block w-full text-left text-gray-600 hover:text-gray-900"
-            >
-              Υπηρεσίες
-            </button>
-            <button
-              onClick={() => scrollToSection('about')}
-              className="block w-full text-left text-gray-600 hover:text-gray-900"
-            >
-              Σχετικά
-            </button>
-            <button
-              onClick={() => scrollToSection('videos')}
-              className="block w-full text-left text-gray-600 hover:text-gray-900"
-            >
-              Βίντεο
-            </button>
-            <button
-              onClick={() => scrollToSection('testimonials')}
-              className="block w-full text-left text-gray-600 hover:text-gray-900"
-            >
-              Μαρτυρίες
-            </button>
+        {isOpen && (
+          <div className="md:hidden pt-4 pb-2 border-t border-gray-100 mt-3 space-y-3">
+            {NAV_LINKS.map((link) => (
+              <button
+                key={link.target}
+                onClick={() => scrollToSection(link.target)}
+                className="block w-full text-left font-barlow font-medium text-[14px] text-gray-600 hover:text-gray-900"
+              >
+                {link.label}
+              </button>
+            ))}
             <button
               onClick={() => scrollToSection('contact')}
-              className="block w-full text-left bg-emerald-600 text-white px-6 py-2.5 rounded-lg hover:bg-emerald-700 transition-colors"
+              className="flex items-center gap-2.5 bg-[#222] text-white pl-5 pr-3 py-2.5 rounded-full font-barlow font-medium text-[14px] w-full justify-center mt-2"
             >
-              Επικοινωνία
+              Κλείσε Συνεδρία
+              <span className="w-7 h-7 rounded-full bg-white/15 flex items-center justify-center">
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 12 12"
+                  fill="none"
+                  className="rotate-[-45deg]"
+                >
+                  <path
+                    d="M1 11L11 1M11 1H3M11 1V9"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </span>
             </button>
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </nav>
   );
 }
