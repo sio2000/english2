@@ -34,7 +34,7 @@ export default function Hero() {
           </span>
         </h1>
 
-        <p className="font-barlow font-medium text-white/80 text-[18px] mt-6 max-w-lg">
+        <p className="font-barlow font-medium text-white text-[18px] mt-6 max-w-lg [text-shadow:0_2px_10px_rgba(0,0,0,0.55)]">
           Δείξε τον Εαυτό σου όπως πραγματικά είναι — ξεπέρασε τον φόβο
           της έκφρασης και ανακάλυψε την αληθινή σου δύναμη
         </p>
